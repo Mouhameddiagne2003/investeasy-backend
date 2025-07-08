@@ -38,10 +38,15 @@ public class SecurityConfig {
         @Override
         public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
             CorsConfiguration config = new CorsConfiguration();
-            config.setAllowedOrigins(List.of("*"));
-            config.setAllowedMethods(List.of("*"));
-            config.setAllowedHeaders(List.of("*"));
-            return config;
+        config.setAllowedOrigins(List.of(
+            "https://investeasy-frontend.vercel.app",
+            "http://localhost:3000" // Pour le dev local
+        ));
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+        config.setExposedHeaders(List.of("Authorization")); // Important pour JWT
+        config.setMaxAge(3600L); // Cache la config CORS 1h
+        return config;
         }
     }
 
