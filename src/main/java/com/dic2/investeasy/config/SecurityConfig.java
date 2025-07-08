@@ -39,7 +39,7 @@ public class SecurityConfig {
         public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
             CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOrigins(List.of(
-            "https://investeasy-frontend.vercel.app",
+            "hhttps://investeasy-frontend-sn.vercel.app",
             "http://localhost:3000" // Pour le dev local
         ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
